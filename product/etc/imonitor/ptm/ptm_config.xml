@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ptm_config version="1.0">
+        <period_check check_time_base="120000"> <!--2 mins-->
+        <!--record_type value 1:temperature 0:other pls do not change the default config in this tag-->
+        <!--use_data_src value true:use data_src false: use name (for hisi to detect temperature,qualcomm use true pls)-->
+                <check_item name="powergenie_mode" check_type="property" value_type="string" record_type="0" use_data_src="true">
+                        <data_src>persist.sys.smart_power</data_src>
+                </check_item>
+                <check_item name="backlight" check_type="device_node" value_type="integer" record_type="0" use_data_src="true">
+                        <data_src>/sys/class/leds/lcd-backlight/brightness</data_src>
+                </check_item>
+                <check_item name="discharging" check_type="device_node" value_type="integer" record_type="0" use_data_src="true">
+                        <data_src>/sys/class/power_supply/battery/current_now</data_src>
+                </check_item>
+                <check_item name="therm_cpu" check_type="device_node" value_type="integer" record_type="1" use_data_src="false"><!-- APtemp -->
+                        <data_src>/sys/module/qpnp_adc_voltage/parameters/therm_cpu</data_src>
+                </check_item>
+                <check_item name="therm_pa" check_type="device_node" value_type="integer" record_type="1" use_data_src="false"><!-- PAtemp -->
+                        <data_src>/sys/module/qpnp_adc_voltage/parameters/therm_pa</data_src>
+                </check_item>
+                <check_item name="battery" check_type="device_node" value_type="integer" record_type="1" use_data_src="false"><!-- BatteryTemp -->
+                        <data_src>/sys/class/thermal/thermal_zone16/temp</data_src>
+                </check_item>
+                <check_item name="CpuFreq" check_type="device_node" value_type="integer" record_type="0" use_data_src="true">
+                        <data_src>/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq</data_src>
+                </check_item>
+        </period_check>
+        <thermal>
+                <const>
+                        <item name="ShellTempA" value="-0.41258"/>
+                        <item name="ShellTempB" value="0.34388"/>
+                        <item name="ShellTempC" value="1.29941"/>
+                </const>
+                <path>
+                        <item name="cpu_freq" path="/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" />
+                        <item name="lcd_brightness" path="/sys/class/leds/lcd-backlight/brightness" />
+                        <item name="current_now" path="/sys/class/power_supply/battery/current_now" />
+                        <item name="voltage_now" path="/sys/class/power_supply/battery/voltage_now" />
+                        <item name="usb_charge" path="/sys/class/power_supply/usb/online" />
+                        <item name="external_sdcard" path="/storage/sdcard0" />
+                </path>
+
+                <infocollect>
+                        <!-- samplingrate unit: minute, thresholdtemp unit: centigrade, topappcount unit: number-->
+                        <item name="temp" samplingrate="1"/>
+                        <item name="tempalarm" samplingrate="1" thresholdtemp="35"/>
+                        <item name="batsipper" samplingrate="1"  topappcount="10"/>
+                </infocollect>
+
+                <device>
+			<item name="AP" nodetype="therm_cpu" enablecompute="true" absolutepath="/sys/module/qpnp_adc_voltage/parameters/therm_cpu"/>
+                        <item name="PA" nodetype="therm_pa" enablecompute="true" absolutepath="/sys/module/qpnp_adc_voltage/parameters/therm_pa"/>
+                        <item name="Battery" nodetype="battery" enablecompute="true"/>
+                        <item name="GPU" nodetype="tsens_tz_sensor9" enablecompute="false" absolutepath="/sys/class/thermal/thermal_zone13/temp"/>
+                        <item name="CPU" nodetype="tsens_tz_sensor4" enablecompute="false" absolutepath="/sys/class/thermal/thermal_zone8/temp"/>
+                </device>
+                <NFF>
+                    <item name="tempthreshold" value="45"/>
+                </NFF>
+        </thermal>
+</ptm_config>

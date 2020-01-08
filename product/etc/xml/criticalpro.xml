@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<packages>
+<package name="com.sinoangel.kids.mode_new.ks" path="product/app/MonsterClass" ss="AEE10B0A0D563A6D7CDBB9D751CFE0E26DA6C803DCBCC1435F72730BEA442ED9" version="34"/>
+<package name="com.android.frameworkres.overlay" path="product/overlay" ss="0C872997D85FCB7CBE94FFB700007C2A9179E699925FF74040D9F2C4B185CE64" version="1"/>
+</packages>

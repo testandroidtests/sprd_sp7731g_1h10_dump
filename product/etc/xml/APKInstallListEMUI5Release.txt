@@ -1,0 +1,4 @@
+/product/app/HwFMRadio/HwFMRadio.apk
+/product/app/HwCamera2/HwCamera2.apk,priv
+#/product/app/HwSarControlService/HwSarControlService.apk,priv
+/product/app/MonsterClass/MonsterClass.apk,priv

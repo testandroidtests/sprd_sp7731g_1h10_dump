@@ -1,0 +1,83 @@
+/** BEGIN:    zhangtianyuan 2017/02/17 Sprdnote: Sync T1 USB code  **/
+on post-fs-data
+    chown system system /sys/class/android_usb/android0/f_mass_storage/lun1/file
+    chmod 0660 /sys/class/android_usb/android0/f_mass_storage/lun1/file
+
+on boot
+    write /sys/class/android_usb/android0/iSerial $ro.serialno
+    write /sys/class/android_usb/android0/f_rndis/vendorID 8
+    write /sys/class/android_usb/android0/f_rndis/wceis 1
+    # move this to init.storage.rc
+    #write /sys/class/android_usb/android0/f_mass_storage/board_support_luns 1
+
+
+    
+
+on property:ro.bootmode=iq
+    setprop persist.sys.modem.diag ${persist.sys.modem.diag},vser
+    rm data/property/persist.sys.modem.diag
+
+# Used to set USB configuration at boot and to switch the configuration
+# when changing the default configuration
+#on property:persist.sys.usb.config=*
+#    setprop sys.usb.config mass_storage,adb
+
+
+
+
+# Used to disable USB when switching states
+on property:sys.usb.config=none
+    stop adbd
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/bDeviceClass 0
+    setprop sys.usb.state ${sys.usb.config}
+
+## BEGIN: DTS2015011901250 zhangtianyuan 2015/01/19 Sprdnote: keep the diag port number same #
+on property:sys.usb.config=vser,adb
+    stop adbd
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/bcdDevice 2427
+## BEGIN: DTS2015030701132 zhangtianyuan 2015/03/07 Sprdnote: Change the USB update type to Huawei method #
+    write /sys/class/android_usb/android0/idVendor 12d1
+## END: DTS2015030701132 zhangtianyuan 2015/03/07 #
+    write /sys/class/android_usb/android0/idProduct 4d01
+    write /sys/class/android_usb/android0/functions vser,adb
+    write /sys/class/android_usb/android0/iManufacturer Spreadtrum
+    write /sys/class/android_usb/android0/iProduct "Gadget Serial"
+    write /sys/class/android_usb/android0/iSerial 19761202
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop sys.usb.state $sys.usb.config
+## END: DTS2015011901250 zhangtianyuan 2015/01/19 #
+
+on property:sys.usb.config=vser
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/bcdDevice 2427
+    write /sys/class/android_usb/android0/idVendor 12d1
+    write /sys/class/android_usb/android0/idProduct 4d00
+    write /sys/class/android_usb/android0/functions vser
+    write /sys/class/android_usb/android0/iManufacturer Spreadtrum
+    write /sys/class/android_usb/android0/iProduct "Gadget Serial"
+    write /sys/class/android_usb/android0/iSerial 19761202
+    write /sys/class/android_usb/android0/enable 1
+
+# USB accessory configuration
+on property:sys.usb.config=accessory
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 18d1
+    write /sys/class/android_usb/android0/idProduct 2d00
+    write /sys/class/android_usb/android0/functions ${sys.usb.config}
+    write /sys/class/android_usb/android0/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
+# USB accessory configuration, with adb
+on property:sys.usb.config=accessory,adb
+    stop adbd
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 18d1
+    write /sys/class/android_usb/android0/idProduct 2d01
+    write /sys/class/android_usb/android0/functions ${sys.usb.config}
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop sys.usb.state ${sys.usb.config}
+/** END:  zhangtianyuan 2017/02/17 */

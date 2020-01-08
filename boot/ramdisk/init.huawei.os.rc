@@ -1,0 +1,21 @@
+on post-fs-data
+
+on property:sys.boot_completed=1 && property:ro.config.hw_perfhub=true
+    start perfhub
+
+on boot
+    write /proc/sys/kernel/hung_task_panic 1
+    write /proc/sys/kernel/hung_task_timeout_secs 120
+    write /proc/hung_task/hw_monitor_list "whitelist,system_server,surfaceflinger"
+    write /proc/hung_task/hw_enable "on"
+
+service perfhub /system/bin/perfhub
+    class late_start
+    user system
+    group system
+    disabled
+
+service hwnffserver /sbin/hwnffserver
+    class core
+    oneshot
+    seclabel u:r:hwnffserver:s0

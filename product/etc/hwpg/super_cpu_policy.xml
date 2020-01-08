@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <cpu_policy version="1">
+        <scenemode name="df" id="208">
+        </scenemode>
+
+        <scenemode name="lf" id="230">
+        </scenemode>
+
+	<!--speedup for screen on by key power or fingerprint when screen off-->
+	<scenemode name="su" id="508">
+	</scenemode>
+	<scenemode name="tc" id="251">
+	</scenemode>
+
+	<scenemode name="battery_low" id="319">
+		<cpu_maxprofile>1000000</cpu_maxprofile>
+	</scenemode>
+
+        <scenemode name="battery_okay" id="320">
+	</scenemode>
+
+	<scenemode name="battery_critical" id="333">
+		<cpu_maxprofile>768000</cpu_maxprofile>
+	</scenemode>
+
+	<scenemode name="battery_critical_okay" id="334">
+	</scenemode>
+
+        <scenemode name="gt" id="234">
+        </scenemode>
+
+	<scenemode name="ss" id="245">
+	</scenemode>
+
+        <scenemode name=".*?(benchmark|nbench|gpubench|droidbench|neocore|quicinc.vellamo|TDMarkMobile|nenamark|geekbench|smartbench|tdmm2v10jni|quadrant.ui|android.cm3|greenecomputing.linpack|jpct.bench|cfbench|membench|garret.bench|performance.test|hw.performance|glbenchmark|coremark|futuremark.dmandroid|rightware.BasemarkX_Free).*" id="10000">
+           <cpu_minprofile>1300000</cpu_minprofile>
+        </scenemode>
+
+
+        <scenemode name="lt" id="236">
+           <cpu_minprofile>1000000</cpu_minprofile>
+        </scenemode>
+
+        <scenemode name="bf" id="203">
+            <msg_policy_threshold>15</msg_policy_threshold>
+            <check_load_delay>30000</check_load_delay>
+            <check_load_mode>2</check_load_mode>
+        </scenemode>
+
+         <scenemode name="g3f" id="204">
+            <gpu_maxprofile>384000</gpu_maxprofile>
+            <msg_policy_threshold>15</msg_policy_threshold>
+            <check_load_delay>30000</check_load_delay>
+            <check_load_mode>1</check_load_mode>
+        </scenemode>
+
+        <scenemode name="cf" id="221">
+            <cpu_maxprofile>1000000</cpu_maxprofile>
+        </scenemode>
+
+        <scenemode name="g2f" id="233">
+            <gpu_maxprofile>384000</gpu_maxprofile>
+            <msg_policy_threshold>15</msg_policy_threshold>
+            <check_load_delay>30000</check_load_delay>
+            <check_load_mode>1</check_load_mode>
+        </scenemode>
+
+        <scenemode name="is" id="210">
+            <cpu_maxprofile>1000000</cpu_maxprofile>
+        </scenemode>
+
+        <scenemode name="vf" id="228">
+            <cpu_maxprofile>1000000</cpu_maxprofile>
+        </scenemode>
+
+        <scenemode name="ef" id="205">
+            <cpu_maxprofile>1000000</cpu_maxprofile>
+        </scenemode>
+
+        <scenemode name="gaf" id="206">
+        </scenemode>
+
+	<scenemode name="sof" id="301">
+		<cpu_maxprofile>768000</cpu_maxprofile>
+	</scenemode>
+
+        <scenemode name="of" id="225">
+            <cpu_maxprofile>1000000</cpu_maxprofile>
+            <check_load_delay>30000</check_load_delay>
+            <check_load_mode>2</check_load_mode>
+        </scenemode>
+
+        <scenemode name="mmf" id="235">
+        </scenemode>
+
+        <scenemode name="vs" id="246">
+            <cpu_maxprofile>1000000</cpu_maxprofile>
+        </scenemode>
+
+	<scenemode name="com.autonavi.xmgd.navigator|com.baidu.BaiduMap|com.mapbar.android.mapbarmap|com.autonavi.minimap|com.google.android.apps.maps|cld.navi.mainframe|com.google.android.street|com.sogou.map.android.maps|com.google.earth|cn.com.tiros.android.navidog|com.tencent.map|cn.com.tiros.android.navidog4x|com.j.locationalarm|com.uu.uunavi|com.cjq.wxmap|com.pdager.navi|hw.Guider|com.telenav.app.android.cmcc|menion.android.locus.pro|com.PaPaGOShanghai" id="10001">
+            <msg_policy_threshold>15</msg_policy_threshold>
+            <check_load_delay>30000</check_load_delay>
+            <check_load_mode>2</check_load_mode>
+	</scenemode>
+
+	<scenemode name="com.tuniu.app.ui|ctrip.android.view|cn.amazon.mShop.android|com.dangdang.buy2|com.ebay.mobile|com.gome.eshopnew|com.jingdong.app.mall|com.jm.android.jumei|com.nuomi|com.sankuai.meituan|com.sankuai.movie|com.smzdm.client.android|com.suning.mobile.ebuy|com.taobao.etao|com.taobao.taobao|com.thestore.main|com.tmall.wireless|com.achievo.vipshop|com.dianping.v1" id="10002">
+            <check_load_delay>30000</check_load_delay>
+            <check_load_mode>2</check_load_mode>
+	</scenemode>
+
+    <!---for-news-app-->
+    <scenemode name="com.netease.newsreader.activity|com.ifeng.news2|com.sohu.newsclient|com.sina.news|com.tencent.news|com.myzaker.ZAKER_Phone|com.ss.android.article.news" id="10003">
+        <cpu_maxprofile>1000000</cpu_maxprofile>
+        <check_load_delay>30000</check_load_delay>
+        <check_load_mode>2</check_load_mode>
+    </scenemode>
+
+    <scenemode name="org.cocos2d.fishingjoy*|com.popcap.pvz2cthdhwct|com.tencent.pao|com.vectorunit.red" id="10004">
+        <gpu_maxprofile>384000</gpu_maxprofile>
+        <msg_policy_threshold>15</msg_policy_threshold>
+    </scenemode>
+
+    <!---for-secial-apk-->
+    <scenemode name="com.huawei.appmarket|com.tencent.android.qqdownloader|com.qihoo.appstore|com.hiapk.marketpho|com.baidu.appsearch" id="10005">
+        <cpu_maxprofile>1200000</cpu_maxprofile>
+    </scenemode>
+</cpu_policy>

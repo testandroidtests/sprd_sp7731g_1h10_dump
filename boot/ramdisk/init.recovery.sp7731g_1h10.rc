@@ -1,0 +1,22 @@
+on post-fs
+    insmod /system/lib/modules/focaltech_ts.ko
+
+service gnss_download /system/bin/gnss_download
+    class cali
+    user system
+    group system
+    oneshot
+
+on factorytest
+
+service gnss_download-ft /system/bin/gnss_download
+    class factorytest
+    user root
+    group root
+
+
+# DTS2017050409725 xwx460241 bugfix WT can not run
+service download /system/bin/download
+    class cali
+    user root
+    group root

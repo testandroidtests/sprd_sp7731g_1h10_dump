@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (c) 2009, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+
+<resources>
+    <!--******************************** 1.PROTOCOL TEAM BEGIN -->
+    <!--******************************** 1.PROTOCOL TEAM END -->
+    <!--******************************** 2.APP MANUFACTURE TEAM BEGIN -->
+    <!--******************************** 2.APP MANUFACTURE TEAM END -->
+    <!--******************************** 3.BASEAPP TEAM BEGIN -->
+    <!-- DTS2017061902909 wwx471257 20170619 begin -->
+    <integer settings.secure.wifi_ap_maxscb="5"/>
+    <!-- DTS2017061902909 wwx471257 20170619 end -->
+    <integer settings.system.glove_file_node="0" />
+    <integer settings.system.single_hand_screen_zoom="0" />
+    <integer settings.global.window_animation_scale="0.5" />
+    <integer settings.global.convert_brightnesss_factor="3.2" />
+    <integer settings.global.transition_animation_scale="0.5" />
+    <integer has_encryption="0" />
+    <integer vibrate_when_ringing="1" />
+    <integer settings.system.screen_brightness="85" />
+    <integer eapsim_view_removed="1" />
+    <integer settings.secure.fp_take_photo="0" />
+    <!-- DTS2016120707967 zengzixuan WX368118 20161207 begin-->
+    <integer hw_split_navigation_bar_dp="480"/>
+    <!-- DTS2016120707967 zengzixuan WX368118 20161207 end-->
+    <!-- DTS2016122807704 , gaochao WX421010, 2017/01/10 begin -->
+    <string settings.system.assisted_gps_service_port="7276"/>
+    <!-- DTS2016122807704 , gaochao WX421010, 2017/01/10 end -->
+    <!-- DTS2017011206398 wwx316902 20170204 begin -->
+    <string theme_no_online = "true"/>
+    <!-- DTS2017011206398 wwx316902 20170204 end -->
+    <!--******************************** 3.BASEAPP TEAM END -->
+    <!--******************************** 4.MULTI-MEDIA TEAM BEGIN -->
+    <!--******************************** 4.MULTI-MEDIA TEAM END -->
+    <!--******************************** 5.FRAMEWORK TEAM BEGIN -->
+    <!--******************************** 5.FRAMEWORK TEAM END -->
+    <!--******************************** 6.DATA SERVICE TEAM BEGIN -->
+    <!--******************************** 6.DATA SERVICE TEAM END -->
+    <!--******************************** 7.APPLET TEAM BEGIN -->
+    <!--******************************** 7.APPLET TEAM END -->
+    <!--******************************** 8.CUSTOM TEAM BEGIN -->
+    <!--******************************** 8.CUSTOM TEAM END -->
+    <bool hw_backup_otg_enable="true" /> 
+    <bool hw_backup_sd_disable="true" /> 
+    <!-- DTS2016120811936 cwx338037 20161208 begin -->
+    <integer fingersense_smartshot_enabled="0"/>
+    <!-- DTS2016120811936 cwx338037 20161208 end -->
+    <!-- DTS2016121408741 wwx368227 20161230 begin -->
+    <integer settings.system.smart_network_switching="0"/>
+    <!-- DTS2016121408741 wwx368227 20161230 end -->
+    <!-- DTS2017011111102 wwx273251 20170122 begin -->
+    <integer settings.system.screen_brightness_mode="0" />
+    <string app_name_two_lines="false"/>
+    <!-- DTS2017011111102 wwx273251 20170122 end -->
+    <!-- DTS2017061902909 delete wwx471257 20170619 begin -->
+    <!-- DTS2017061209732 wwx471257 20170616 begin -->
+    <!-- DTS2017061209732 wwx471257 20170616 end -->
+    <!-- DTS2017061902909 delete wwx471257 20170619 end -->
+    <!-- DTS2017062402210 twx409359 20170624 begin -->
+    <integer battery_percent_switch="0" />
+    <!-- DTS2017062402210 twx409359 20170624 end -->
+    <!-- DTS2017072205091 gwx418044 20170726 begin -->
+    <integer settings.global.data_roaming="0"/>
+    <!-- DTS2017072205091 gwx418044 20170726 end -->
+</resources>

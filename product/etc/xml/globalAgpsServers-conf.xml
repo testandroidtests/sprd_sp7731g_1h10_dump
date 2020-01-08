@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<agpsServers version="1">
+    <!-- SW_GLOBAL_EUROPE_004 begin-->
+    <agpsServer 
+        name="Italy-Wind"
+        mccmnc="22288"
+        supl_port="7275"
+        supl_host="supl.google.com"
+    />
+    <agpsServer 
+        name="Switzerland-Swisscom"
+        mccmnc="22801"
+        supl_port="7275"
+        supl_host="supl.vodafone.com"
+    />
+    <agpsServer
+        name="Russian"
+        mccmnc="250"
+        supl_port="7276"
+        supl_host="supl.google.com"
+    />
+    <agpsServer
+        name="Belarus"
+        mccmnc="257"
+        supl_port="7276"
+        supl_host="supl.google.com"
+    />
+    <agpsServer
+        name="Ukraine"
+        mccmnc="255"
+        supl_port="7276"
+        supl_host="supl.google.com"
+    />
+    <agpsServer
+        name="Armenia"
+        mccmnc="283"
+        supl_port="7276"
+        supl_host="supl.google.com"
+    />
+    <!-- SW_GLOBAL_EUROPE_004 end-->
+</agpsServers>

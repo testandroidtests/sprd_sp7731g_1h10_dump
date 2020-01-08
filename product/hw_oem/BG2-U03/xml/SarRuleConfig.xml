@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SarRuleConfig>
+    <!-- restore sar value when condition not match, for wifi and cell sar value -->
+    <restore>
+        <sar_cell_restore value="0" />
+        <sar_wifi_24GHz_restore value="18" />
+        <is_gprs_sar_sensor_reduce value="1" />
+    </restore>
+    <!-- is_use_precondition is used to control power dissipation, recommend is 1 -->
+    <configs is_use_precondition="1" >
+        <!-- value remark: 1-true, 0-false, NA-not care, empty string ""-NA -->
+        <!-- wifi_band: 0-2.4GHz, 1-5GHz -->
+        <config>
+            <sim_type value="1" />
+            <is_cell_sar_sensor value="1" />
+            <sar_cell_reduce value="7" />
+            <is_wifi_sar_sensor value="1" />
+            <is_wifi_ap_opened value="0" />
+            <is_wifi_connected value="1" />
+            <sar_wifi_24GHz_reduce value="12" />
+        </config>
+        <config>
+            <is_sub0_voice value="1" />
+            <is_cell_sar_sensor value="1" />
+            <sar_cell_reduce value="7" />
+        </config>
+        <config>
+            <sim_type value="1" />
+            <is_cell_sar_sensor value="1" />
+            <sar_cell_reduce value="5" />
+        </config>
+        <config>
+            <sub0_cell_band value="44" />
+            <is_cell_sar_sensor value="1" />
+            <sar_cell_reduce value="7" />
+        </config>
+        <config>
+            <sub0_cell_band value="45" />
+            <is_cell_sar_sensor value="1" />
+            <sar_cell_reduce value="7" />
+        </config>
+        <config>
+            <sub0_cell_band value="46" />
+            <is_cell_sar_sensor value="1" />
+            <sar_cell_reduce value="7" />
+        </config>
+        <config>
+            <sub0_cell_band value="47" />
+            <is_cell_sar_sensor value="1" />
+            <sar_cell_reduce value="7" />
+        </config>
+        <config>
+            <sub0_cell_band value="48" />
+            <is_cell_sar_sensor value="1" />
+            <sar_cell_reduce value="7" />
+        </config>
+        <config>
+            <is_wifi_sar_sensor value="1" />
+            <is_wifi_ap_opened value="0" />
+            <is_wifi_connected value="1" />
+            <sar_wifi_24GHz_reduce value="12" />
+        </config>
+    </configs>
+</SarRuleConfig>

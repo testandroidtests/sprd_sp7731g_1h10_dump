@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- !!!!!!!!!!!!warnning!!!!!!!!!!!!  -->
+<!-- this config is used to config big memory -->
+<!-- upon the item iaware, no allowed add any item -->
+<!-- if you want to accelerate camera launch-->
+<!-- please copy the following xml to your own product folder-->
+<iaware iawareversion="1.0">
+    <feature name="Memory">
+        <config name="MemoryConstant">
+            <item ramsize="1024">
+                <averageAppUss>12</averageAppUss>
+                <lowCpuLoad>60</lowCpuLoad>
+                <highCpuLoad>85</highCpuLoad>
+                <emergencyMemory>270</emergencyMemory>
+                <bigMemCriticalMemory>260</bigMemCriticalMemory>
+                <defaultCriticalMemory>310</defaultCriticalMemory>
+                <normalMemory>450</normalMemory>
+                <reservedZram>0</reservedZram>
+                <swappiness>120</swappiness>
+                <direct_swappiness>30</direct_swappiness>
+                <extra_free_kbytes>12150</extra_free_kbytes>
+            </item>
+            <item ramsize="2048">
+                <averageAppUss>12</averageAppUss>
+                <lowCpuLoad>60</lowCpuLoad>
+                <highCpuLoad>85</highCpuLoad>
+                <emergencyMemory>420</emergencyMemory>
+                <bigMemCriticalMemory>400</bigMemCriticalMemory>
+                <defaultCriticalMemory>600</defaultCriticalMemory>
+                <normalMemory>900</normalMemory>
+                <reservedZram>60</reservedZram>
+                <swappiness>150</swappiness>
+                <direct_swappiness>60</direct_swappiness>
+                <extra_free_kbytes>12150</extra_free_kbytes>
+            </item>
+        </config>
+    <!-- <config name="BigMemApp">
+            <item appname="com.huawei.camera">
+                <launch>900</launch>
+            </item>
+        </config> -->
+    </feature>
+
+    <feature name="CPU">
+        <config name="sub_switch">
+            <item type="switch">
+                <log bit="0">0</log>
+                <freq_interactive bit="1">0</freq_interactive>
+                <scroller_boost bit="3">0</scroller_boost>
+                <key_thread_boost bit="4">1</key_thread_boost>
+                <ta_app_start_boost bit="5">1</ta_app_start_boost>
+                <vr bit="8">0</vr>
+            </item>
+        </config>
+
+        <config name="enable_pg_freq">
+            <item>
+                <enable>false</enable>
+            </item>
+        </config>
+
+        <config name="cpuset_screen_on">
+            <item type="cpuset">
+                <fg>0-3</fg>
+                <bg>3</bg>
+                <key_bg>2-3</key_bg>
+                <sys_bg>2-3</sys_bg>
+                <top_app>0-3</top_app>
+                <ta_boost>0-3</ta_boost>
+                <boost>0-3</boost>
+            </item>
+        </config>
+
+        <config name="cpuset_VR">
+            <item type="cpuset">
+                <fg>0-3</fg>
+                <bg>3</bg>
+                <key_bg>2-3</key_bg>
+                <sys_bg>2-3</sys_bg>
+                <top_app>0-3</top_app>
+                <boost>0-1</boost>
+            </item>
+        </config>
+
+        <config name="cpuset_screen_off">
+            <item type="cpuset">
+                <fg>0-3</fg>
+                <bg>1-3</bg>
+                <key_bg>0-3</key_bg>
+                <sys_bg>0-3</sys_bg>
+                <top_app>0-3</top_app>
+                <boost>0-3</boost>
+            </item>
+        </config>
+
+        <!-- enable by key_thread_boost sub_switch -->
+        <config name="boost_key_thread_list">
+            <item process_name="system_server">
+                <thread_name>ActivityManag</thread_name>
+                <thread_name>android.fg</thread_name>
+                <thread_name>fingerprintServ</thread_name>
+                <thread_name>SensorService</thread_name>
+                <thread_name>HWExtMotionServ</thread_name>
+                <thread_name>sManagerService</thread_name>
+            </item>
+            <item process_name="com.android.incallui">
+                <thread_name>ndroid.incallui</thread_name>
+            </item>
+        </config>
+    </feature>
+</iaware>

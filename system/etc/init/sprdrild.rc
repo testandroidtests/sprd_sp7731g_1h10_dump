@@ -1,0 +1,27 @@
+service spril-daemon /system/bin/sprdrild
+    class core
+    socket rild stream 660 root radio
+    socket sap_uim_socket1 stream 660 bluetooth bluetooth
+    socket rild-debug stream 660 radio system
+    disabled
+    user root
+    group radio cache inet misc audio log sdcard_rw shell readproc wakelock
+
+service modemd /system/bin/modemd
+    class core
+    user system
+    group system radio shell
+    oneshot
+
+service phoneserver /system/bin/phoneserver
+    class core
+    user root
+    group radio system shell dhcp
+    disabled
+    oneshot
+
+service modem_control   /system/bin/modem_control
+    class core
+    user system
+    group system radio shell
+    oneshot
